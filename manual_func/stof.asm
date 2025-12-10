@@ -2,13 +2,14 @@ section .bss
 	slice_str resb 32
 
 section .text
-	global _start
+	global stof
+
 	extern stoi
 	extern stoiAD
 	extern strlen
 	extern slise
 
-_start:
+stof:
 	push rbp
 	mov rbp, rsp
 
@@ -53,7 +54,6 @@ _start:
 	syscall
 
 
-
 finddot:
 	xor rax, rax
 	xor cl, cl
@@ -70,7 +70,4 @@ finddot:
 	ret
 .found:
 	ret
-
-
-
 
